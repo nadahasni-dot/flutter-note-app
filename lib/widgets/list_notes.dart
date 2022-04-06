@@ -36,10 +36,7 @@ class _ListNotesState extends State<ListNotes> {
         itemBuilder: (context, index) {
           final note = _controller.listNotes[index];
 
-          return GestureDetector(
-            onTap: () async {},
-            child: NoteCard(note: note, index: index),
-          );
+          return NoteCard(note: note, index: index);
         },
       );
     });

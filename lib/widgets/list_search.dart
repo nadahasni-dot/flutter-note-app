@@ -47,10 +47,7 @@ class _ListSearchState extends State<ListSearch> {
         itemBuilder: (context, index) {
           final note = _controller.listSearch[index];
 
-          return GestureDetector(
-            onTap: () async {},
-            child: NoteCard(note: note, index: index),
-          );
+          return NoteCard(note: note, index: index);
         },
       );
     });

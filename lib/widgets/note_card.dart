@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 import '../models/note_model.dart';
+import '../routes/route_names.dart';
 
 final _lightColors = [
   Colors.amber.shade300,
@@ -29,29 +31,32 @@ class NoteCard extends StatelessWidget {
     final time = DateFormat.yMMMd().format(note.createdAt);
     final minHeight = getMinHeight(index);
 
-    return Card(
-      color: color,
-      child: Container(
-        constraints: BoxConstraints(minHeight: minHeight),
-        padding: const EdgeInsets.all(8),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              time,
-              style: TextStyle(color: Colors.grey.shade700),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              note.title,
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+    return GestureDetector(
+      onTap: () => Get.toNamed(RouteNames.detailScreen, arguments: note.id),
+      child: Card(
+        color: color,
+        child: Container(
+          constraints: BoxConstraints(minHeight: minHeight),
+          padding: const EdgeInsets.all(8),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                time,
+                style: TextStyle(color: Colors.grey.shade700),
               ),
-            ),
-          ],
+              const SizedBox(height: 4),
+              Text(
+                note.title,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
