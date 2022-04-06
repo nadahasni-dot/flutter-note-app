@@ -19,6 +19,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       themeMode: ThemeMode.dark,
       getPages: AppPages.appPages,
       debugShowCheckedModeBanner: false,
