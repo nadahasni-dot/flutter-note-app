@@ -64,6 +64,25 @@ class NoteController extends GetxController {
     }
   }
 
+  Future updatenote(int id, String title, String description) async {
+    try {
+      await DatabaseService.instance.update(
+        Note(
+            id: id,
+            title: title,
+            description: description,
+            createdAt: DateTime.now()),
+      );
+
+      Get.back();
+
+      getDetail(id);
+      getAllNotes();
+    } catch (e) {
+      log(e.toString());
+    }
+  }
+
   Future deleteNote(int id) async {
     try {
       await DatabaseService.instance.delete(id);

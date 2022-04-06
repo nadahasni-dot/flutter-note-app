@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 import '../controllers/note_controller.dart';
+import '../routes/route_names.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({Key? key}) : super(key: key);
@@ -29,7 +30,12 @@ class _DetailScreenState extends State<DetailScreen> {
         title: const Text('Note Detail'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              if (_controller.noteDetail == null) return;
+
+              Get.toNamed(RouteNames.editScreen,
+                  arguments: _controller.noteDetail);
+            },
             icon: const Icon(Icons.edit),
           ),
           IconButton(
