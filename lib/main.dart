@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       darkTheme: ThemeData(
+        primarySwatch: Colors.green,
         brightness: Brightness.dark,
       ),
       themeMode: ThemeMode.dark,
