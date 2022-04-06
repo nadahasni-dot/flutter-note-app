@@ -8,6 +8,19 @@ import '../services/database_service.dart';
 class NoteController extends GetxController {
   RxBool isLoading = true.obs;
   RxList<Note> listNotes = <Note>[].obs;
+  RxList<Note> listSearch = <Note>[].obs;
+
+  searchNotes(String query) async {
+    await Future.delayed(const Duration(milliseconds: 500));
+
+    final searchResult = listNotes
+        .where((note) => note.title.toLowerCase().contains(query))
+        .toList();
+    log('search: ${searchResult.length.toString()}');
+
+    listSearch.clear();
+    listSearch.addAll(searchResult);
+  }
 
   Future getAllNotes() async {
     isLoading.value = true;
