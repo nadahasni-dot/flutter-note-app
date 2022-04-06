@@ -1,16 +1,25 @@
-# note_app
 
-A new Flutter project.
+# Note App
 
-## Getting Started
+Simple Note App using local storage (Sqlite / Flutter Sqflite)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Logo](https://raw.githubusercontent.com/nadahasnim/flutter-note-app/main/assets/images/launcher.png)
+
+
+## Authors
+
+- [@nadahasnim](https://www.github.com/nadahasnim)
+
+
+## Contributing
+
+Contributions are always welcome!
+
+
+## Lessons Learned
+
+Implementing local sql database storage using Sqflite is not that complicated. The most interesting one is this database is pretty fast and easy to use.
+
